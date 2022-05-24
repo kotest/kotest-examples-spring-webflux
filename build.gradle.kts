@@ -18,7 +18,7 @@ dependencies {
    implementation(kotlin("stdlib"))
    implementation(kotlin("reflect"))
    implementation("org.springframework.boot:spring-boot-starter-webflux:2.5.6")
-   implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+   implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.1.5")
    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2")
    testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6") {
