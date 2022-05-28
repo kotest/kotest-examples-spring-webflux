@@ -16,7 +16,7 @@ group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-extra["kotlinx-coroutines.version"] = "1.6.1"
+extra["kotlinx-coroutines.version"] = "1.6.2"
 
 dependencies {
    implementation(kotlin("reflect"))
