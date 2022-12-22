@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-   id("org.springframework.boot") version "2.7.5"
+   id("org.springframework.boot") version "3.0.1"
    alias(libs.plugins.kotlin.jvm)
    alias(libs.plugins.kotlin.plugin.spring)
 }
@@ -13,9 +13,11 @@ repositories {
    mavenCentral()
 }
 
+
+val javaTarget = JavaVersion.VERSION_17
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = javaTarget
 
 extra["kotlinx-coroutines.version"] = "1.6.2"
 
@@ -46,6 +48,6 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
    kotlinOptions {
       freeCompilerArgs = listOf("-Xjsr305=strict")
-      jvmTarget = "1.8"
+      jvmTarget = javaTarget.toString()
    }
 }
