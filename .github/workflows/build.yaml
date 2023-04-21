@@ -1,0 +1,26 @@
+name: Build
+
+on:
+   push:
+
+jobs:
+   build:
+      runs-on: ubuntu-latest
+
+      steps:
+         -  name: "Checkout code"
+            uses: actions/checkout@v3 # Checkout the code. No need of tags and whole history.
+            with:
+               fetch-depth: 1
+
+         -  name: Setup JDK
+            uses: actions/setup-java@v3
+            with:
+               distribution: 'temurin'
+               java-version: '11'
+
+         -  name: Setup Gradle
+            uses: gradle/gradle-build-action@v2
+
+         -  name: Gradle check
+            run: ./gradlew check
