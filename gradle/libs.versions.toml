@@ -1,21 +1,26 @@
 [versions]
-kotlin = "1.7.22"
-kotest = "5.5.4"
+kotlin = "1.8.20"
+kotest = "5.6.1"
+kotlinxCoroutines = "1.6.2"
+springBoot = "3.0.5"
 
 [libraries]
-kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
-kotest-extensions-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version = "1.1.2" }
+kotest-runnerJunit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotestExtensions-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version = "1.1.2" }
 springmockk = { module = "com.ninja-squad:springmockk", version = "4.0.0" }
 
 # Versions managed by Spring dependency management, and thus excluded here
-kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
-reactor-kotlin-extensions = { module = "io.projectreactor.kotlin:reactor-kotlin-extensions" }
+kotlinxCoroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
+reactor-kotlinExtensions = { module = "io.projectreactor.kotlin:reactor-kotlin-extensions" }
 reactor-test = { module = "io.projectreactor:reactor-test" }
 
-spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
-spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+springBoot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+springBoot-starterWebflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+springBoot-starterTest = { module = "org.springframework.boot:spring-boot-starter-test" }
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
