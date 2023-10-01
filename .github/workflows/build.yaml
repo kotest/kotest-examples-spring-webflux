@@ -10,7 +10,7 @@ jobs:
 
       steps:
          -  name: "Checkout code"
-            uses: actions/checkout@v3 # Checkout the code. No need of tags and whole history.
+            uses: actions/checkout@v4 # Checkout the code. No need of tags and whole history.
             with:
                fetch-depth: 1
 
